@@ -33,7 +33,7 @@ const phoneDisplay = (phones) => {
         div.classList.add("mt-5")
         div.classList.add("mb-3")
         div.innerHTML = `
-        <div class="card" style="width: 18rem;">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${phone.brand}</h5>
@@ -63,15 +63,20 @@ const cardDetails = (id) => {
 
         const div = document.createElement('div');
         main.innerHTML = "";
+        div.classList.add("mb-3")
         div.innerHTML = `
-        <div class="card" style="width: 18rem;">
-        <img src="${setDetails.image}" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h6 class="card-title">${setDetails.brand}</h6>
-            <h6 class="card-title">${setDetails.mainFeatures.memory}</h6>
-            <h6 class="card-title">${setDetails.mainFeatures.displaySize}</h6>
-            <h6 class="card-title">${setDetails.mainFeatures.chipSet}</h6>
-            
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
+        <div class="card-body">
+        <img style = "width:200px; height:200px;" src="${setDetails.image}" class="card-img-top" alt="...">
+                <h2 class="card-title text-center text-success">${setDetails.brand}</h2>
+                <h6 class="card-title text-center text-danger">ReleaseDate:</h6>
+                <h6 class="card-title text-center">${setDetails.releaseDate}</h6>
+                <h6 class="card-title text-center text-danger">Memory:</h6>
+                <h6 class="card-title text-center">${setDetails.mainFeatures.memory}</h6>
+                <h6 class="card-title text-center text-danger">DisplaySize:</h6>
+                <h6 class="card-title text-center ">${setDetails.mainFeatures.displaySize}</h6>
+                <h6 class="card-title text-center text-danger">ChipSet:</h6>
+                <h6 class="card-title text-center">${setDetails.mainFeatures.chipSet}</h6>
             </div>
         </div>
         `
