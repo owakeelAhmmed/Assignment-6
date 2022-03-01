@@ -1,10 +1,10 @@
 
-const main = document.getElementById('main');
+const main = document.getElementById('main');//main div declare
 const inputBtn = () => {
     const input = document.getElementById('input-value');
     const searchText = input.value;
     const errorMessage = document.getElementById('error-text');
-    
+    //Conditions are provided for the Empty string
     if(searchText == ''){
          errorMessage.innerText = "Please enter a search text";
          input.value='';
@@ -20,6 +20,7 @@ const inputBtn = () => {
     }
 
 }
+// phone details show ===============>
 const phoneDisplay = (phones) => {
     for(const phone of phones){
         const div = document.createElement('div');
@@ -39,11 +40,10 @@ const phoneDisplay = (phones) => {
         
         `
         main.appendChild(div)
-
     }
 }
+// ======= Card Details Show ==========>
 const cardDetails = (id) => {
-    console.log(id);
     const url = ` https://openapi.programming-hero.com/api/phone/${id}`;
     fetch(url)
     .then(response => response.json())
@@ -53,24 +53,19 @@ const cardDetails = (id) => {
         main.innerHTML = "";
         div.classList.add("mb-3")
         div.innerHTML = `
-            <div class="card mb-3 mt-4" style="max-width: 540px;">
+            <div class="card mb-3 mt-4" style="max-width: 616px;">
             <div class="row g-0">
                 <div class="col-md-4">
                 <img style = "width:100%; height:100%; padding: 20px;" src="${setDetails.image}" class="card-img-top" alt="...">
                 </div>
                 <div class="col-md-8">
-                <div class="card-body">
-                <h2 class="card-title text-center text-success">${setDetails.brand}</h2>
-                <h6 class="card-title text-center text-danger">ReleaseDate:</h6>
-                <P class="card-title text-center">${setDetails.releaseDate}</P>
-                <h6 class="card-title text-center text-danger">Memory:</h6>
-                <P class="card-title text-center">${setDetails.mainFeatures.memory}</P>
-                <h6 class="card-title text-center text-danger">DisplaySize:</h6>
-                <P class="card-title text-center ">${setDetails.mainFeatures.displaySize}</P>
-                <h6 class="card-title text-center text-danger">ChipSet:</h6>
-                <P class="card-title text-center">${setDetails.mainFeatures.chipSet}</P>
-                <h6 class="card-title text-center text-danger">Sensors:</h6>
-                <P class="card-title text-center">${setDetails.mainFeatures.sensors}</P>
+                <div class="card-body ">
+                <h2 class="card-title  text-success">${setDetails.brand}</h2>
+                <P class="card-title"><h6 style="color:#e84393;">ReleaseDate:</h6> ${setDetails.releaseDate}</P>                
+                <P class="card-title"><h6 style="color:#e84393">Memory:</h6> ${setDetails.mainFeatures.memory}</P>               
+                <P class="card-title "><h6 style="color:#e84393">DisplaySize:</h6> ${setDetails.mainFeatures.displaySize}</P>                
+                <P class="card-title"><h6 style="color:#e84393">ChipSet:</h6> ${setDetails.mainFeatures.chipSet}</P>               
+                <P class="card-title"><h6 style="color:#e84393">Sensors:</h6> ${setDetails.mainFeatures.sensors}</P>
                 </div>
                 </div>
             </div>
