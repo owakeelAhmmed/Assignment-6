@@ -54,7 +54,7 @@ const cardDetails = (id) => {
         div.classList.add("mb-3")
         div.classList.add("mt-5")
         div.innerHTML = `
-            <div class="card mx-auto " style="width: 18rem;">
+            <div class="card mx-auto shadow p-3 bg-body " style="width: 18rem;">
             <img src="${setDetails.image}" class="card-img-top p-3" alt="...">
             <div class="card-body">
                 <h2 class="card-title  text-success">${setDetails.brand}</h2>
@@ -76,4 +76,4 @@ const cardDetails = (id) => {
     });
 }
 
-
+Bluetooth
