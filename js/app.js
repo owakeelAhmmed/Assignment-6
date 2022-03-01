@@ -6,7 +6,7 @@ const inputBtn = () => {
     const errorMessage = document.getElementById('error-text');
     //Conditions are provided for the Empty string
     if(searchText == ''){
-         errorMessage.innerText = "Please enter a search text";
+         errorMessage.innerText = "please enter the phone name";
          input.value='';
          main.innerHTML = '';
     }
@@ -52,24 +52,25 @@ const cardDetails = (id) => {
         const div = document.createElement('div');
         main.innerHTML = "";
         div.classList.add("mb-3")
+        div.classList.add("mt-5")
         div.innerHTML = `
-            <div class="card mb-3 mt-4" style="max-width: 616px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img style = "width:100%; height:100%; padding: 20px;" src="${setDetails.image}" class="card-img-top" alt="...">
-                </div>
-                <div class="col-md-8">
-                <div class="card-body ">
+            <div class="card mx-auto " style="width: 18rem;">
+            <img src="${setDetails.image}" class="card-img-top p-3" alt="...">
+            <div class="card-body">
                 <h2 class="card-title  text-success">${setDetails.brand}</h2>
                 <P class="card-title"><h6 style="color:#e84393;">ReleaseDate:</h6> ${setDetails.releaseDate}</P>                
                 <P class="card-title"><h6 style="color:#e84393">Memory:</h6> ${setDetails.mainFeatures.memory}</P>               
                 <P class="card-title "><h6 style="color:#e84393">DisplaySize:</h6> ${setDetails.mainFeatures.displaySize}</P>                
                 <P class="card-title"><h6 style="color:#e84393">ChipSet:</h6> ${setDetails.mainFeatures.chipSet}</P>               
                 <P class="card-title"><h6 style="color:#e84393">Sensors:</h6> ${setDetails.mainFeatures.sensors}</P>
-                </div>
-                </div>
+                <P class="card-title"><h6 style="color:#e84393">Bluetooth:</h6> ${setDetails.others.Bluetooth}</P>
+                <P class="card-title"><h6 style="color:#e84393">GPS:</h6> ${setDetails.others.GPS}</P>
+                <P class="card-title"><h6 style="color:#e84393">NFC:</h6> ${setDetails.others.NFC}</P>
+                <P class="card-title"><h6 style="color:#e84393">Radio:</h6> ${setDetails.others.Radio}</P>
+                <P class="card-title"><h6 style="color:#e84393">USB:</h6> ${setDetails.others.USB}</P>
+                <P class="card-title"><h6 style="color:#e84393">WLAN:</h6> ${setDetails.others.WLAN}</P>
             </div>
-            </div>
+          </div>
                 `
         main.appendChild(div);
     });
