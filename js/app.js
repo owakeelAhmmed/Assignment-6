@@ -13,7 +13,9 @@ const inputBtn = () => {
     else{
         fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
         .then(response => response.json())
-        .then(data => phoneDisplay(data.data))
+
+        .then(data => {
+            phoneDisplay(data.data)})
         input.value='';
         main.innerHTML = '';
         errorMessage.innerHTML = '';
@@ -29,7 +31,7 @@ const phoneDisplay = (phones) => {
         div.classList.add("mt-5")
         div.classList.add("mb-2")
         div.innerHTML = `
-        <div class="card shadow p-3 bg-body rounded" style="width: 18rem;">
+        <div class="card shadow p-3 bg-body rounded">
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${phone.brand}</h5>
@@ -37,10 +39,9 @@ const phoneDisplay = (phones) => {
             <button onclick = "cardDetails('${phone.slug}')" class="btn btn-primary">See More</button>
         </div>
     </div>
-        
         `
         main.appendChild(div)
-    }
+}
 }
 // ======= Card Details Show ==========>
 const cardDetails = (id) => {
@@ -75,5 +76,3 @@ const cardDetails = (id) => {
         main.appendChild(div);
     });
 }
-
-Bluetooth
